@@ -22,7 +22,7 @@ local function test(name, aliases, callback, target)
 
 	task.spawn(function()
 		if not callback then
-			print('')
+			local n = 0
 		elseif not getGlobal(name) then
 			fails = fails + 1
 			warn("â›” " .. name)
