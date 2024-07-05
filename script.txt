@@ -25,17 +25,14 @@ local function test(name, aliases, callback, target)
 			local n = 0
 		elseif not getGlobal(name) then
 			fails = fails + 1
-			warn("â›” " .. name)
 		else
 			local success, message = pcall(callback)
 	        name = tostring(name)
 			message = tostring(message)
 			if success then
 				passes = passes + 1
-				print("")
 			else
 				fails = fails + 1
-				warn("â›” " .. name .. " failed: " .. message)
 			end
 		end
 	
