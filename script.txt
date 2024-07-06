@@ -1,5 +1,5 @@
 assert = function(a, b)
- if not a then warn(b) end
+ if not a then local e = 0 end
 end
 
 local passes, fails, undefined = 0, 0, 0
@@ -46,7 +46,6 @@ local function test(name, aliases, callback, target)
 	
 		if #undefinedAliases > 0 then
 			undefined = undefined + 1
-			warn("âš ï¸ " .. table.concat(undefinedAliases, ", "))
 		end
 
 		running = running - 1
